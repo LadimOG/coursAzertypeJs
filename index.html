@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Styles/style.css" />
+    <script src="Scripts/data.js" defer></script>
+    <script src="Scripts/app.js" defer></script>
+    <script src="Scripts/main.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!--------------------- Header ------------------------>
+    <header>
+      <h1>AzerType</h1>
+    </header>
+
+    <!----------------------- Main --------------------------->
+    <main class="container">
+      <p>
+        Choissez votre option et tapez la proposition qui s'affiche dans le
+        champs en-dessous.
+      </p>
+      <div class="box-radio">
+        <input type="radio" name="proposition" value="mot" id="mot" checked />
+        <label for="mot">Mot</label>
+        <input type="radio" name="proposition" value="phrase" id="phrase" />
+        <label for="phrase">Phrases</label>
+      </div>
+      <h2>Cachalot</h2>
+      <div class="box-input-tape">
+        <input type="text" id="inputText" />
+        <button type="button" id="btnValider">Valider</button>
+      </div>
+      <p>Votre score est de : <span></span></p>
+      <button type="button" id="partager">Partager</button>
+
+      <div class="popup">
+        <form>
+          <!-- champ nom -->
+          <h3>Partager votre score</h3>
+          <div class="box-nom">
+            <label for="nom">Votre nom</label>
+            <input type="text" id="nom" name="nom" placeholder="Votre nom" />
+          </div>
+          <div class="box-email">
+            <label for="email"
+              >Avec qui voulez-vous partager votre score ?</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="nom@domaine.com"
+            />
+          </div>
+
+          <button id="btnEnvoyerMail">Envoyer</button>
+          <!-- bouton de validation -->
+        </form>
+      </div>
+    </main>
+    <!----------------------- Footer --------------------------->
+    <footer>
+      <h3>&copy Ladim OG</h3>
+    </footer>
+  </body>
+</html>
