@@ -91,7 +91,7 @@ function lancerJeu() {
   let champJoueur = document.getElementById("inputText");
   let btnValider = document.getElementById("btnValider");
   let btnPartager = document.querySelector("#partager");
-  let form = document.querySelector(".popup form");
+  let form = document.querySelector(".popup");
   let btnRelancer = document.querySelector("#relancer");
   let score = 0;
   let i = 0;
@@ -130,7 +130,8 @@ function lancerJeu() {
   });
 
   btnPartager.addEventListener("click", () => {
-    form.classList.toggle("popup-active");
+    let divForm = document.querySelector(".box-popup");
+    divForm.classList.toggle("popup-active");
   });
 
   form.addEventListener("submit", (e) => {

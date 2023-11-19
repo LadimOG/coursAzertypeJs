@@ -64,8 +64,44 @@ h2 {
   margin-bottom: 40px;
 }
 
-.popup {
+.box-input-tape {
+  width: 60%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+#inputText {
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: normal;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #c6c3c3;
+  outline: none;
+}
+
+#btnValider {
+  width: 40%;
+  height: 40px;
+  border-radius: 0 5px 5px 0;
+  color: #fff;
+  background-color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.box-popup {
   display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.popup {
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -90,6 +126,10 @@ h3 {
   display: flex;
   flex-direction: column;
   margin: 10px 0;
+}
+
+.box-btns {
+  margin: 5px 0;
 }
 
 footer {
