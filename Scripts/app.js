@@ -81,13 +81,18 @@ function afficherMsgError(msg) {
   displayMsg.innerText = msg;
 }
 
+function relancer() {
+  location.reload();
+}
+
 function lancerJeu() {
   //Variables
   let btnRadios = document.querySelectorAll("input[type=radio]");
-  let inputDuJouer = document.getElementById("inputText");
+  let champJoueur = document.getElementById("inputText");
   let btnValider = document.getElementById("btnValider");
   let btnPartager = document.querySelector("#partager");
-  let form = document.querySelector(".popup");
+  let form = document.querySelector(".popup form");
+  let btnRelancer = document.querySelector("#relancer");
   let score = 0;
   let i = 0;
   let listProposition = listMots;
@@ -105,14 +110,19 @@ function lancerJeu() {
   }
   //---------------------------------------------------
   btnValider.addEventListener("click", () => {
-    if (listProposition[i] === inputDuJouer.value) {
+    if (listProposition[i] === champJoueur.value) {
       score++;
     }
+    console.log(listProposition[i]);
+    console.log(champJoueur.value);
     i++;
-    inputDuJouer.value = "";
+    champJoueur.value = "";
     afficherResultat(score, i);
     if (listProposition[i] === undefined) {
       btnValider.disabled = "false";
+      btnRadios.forEach((el) => {
+        el.disabled = "false";
+      });
       return afficherPropositionMot("fin du jeu!!!");
     } else {
       afficherPropositionMot(listProposition[i]);
@@ -127,6 +137,10 @@ function lancerJeu() {
     e.preventDefault();
     let partageScore = `${score} / ${i}`;
     gererFormulaire(partageScore);
+  });
+
+  btnRelancer.addEventListener("click", () => {
+    relancer();
   });
 
   afficherResultat(score, i);
